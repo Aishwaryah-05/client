@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoomPilot — Enterprise Client Portal | Textile Manufacturing Platform</title>
+  <meta name="description"
+    content="AI-assisted textile manufacturing management platform connecting mills with enterprise brand procurement.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Mobile Sidebar Drawer Overlay -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <!-- LEFT SIDEBAR -->
+    <aside id="app-sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <a href="#overview" class="brand-link">
+          <div class="brand-logo-icon">
+            <!-- Loom / Shuttle Vector Mark -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+              <line x1="8" y1="3" x2="8" y2="21"></line>
+              <line x1="16" y1="3" x2="16" y2="21"></line>
+              <circle cx="12" cy="12" r="2.5" fill="currentColor"></circle>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">Loom<span>Pilot</span></span>
+            <span class="brand-subtitle">Client Portal</span>
+          </div>
+        </a>
+
+        <button id="sidebar-collapse-btn" class="sidebar-toggle-btn" title="Toggle Sidebar Width">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Navigation Menu -->
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">Operations</div>
+
+        <a href="#overview" class="nav-item active" data-page="overview">
+          <div class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+          </div>
+          <span class="nav-label">Overview</span>
+        </a>
+
+        <a href="#catalogue" class="nav-item" data-page="catalogue">
+          <div class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <span class="nav-label">Product Catalogue</span>
+        </a>
+
+        <a href="#create-order" class="nav-item" data-page="create-order">
+          <div class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="16"></line>
+              <line x1="8" y1="12" x2="16" y2="12"></line>
+            </svg>
+          </div>
+          <span class="nav-label">Create New Order</span>
+        </a>
+
+        <a href="#orders" class="nav-item" data-page="orders">
+          <div class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <span class="nav-label">My Orders</span>
+        </a>
+
+        <a href="#tracking" class="nav-item" data-page="tracking">
+          <div class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+          <span class="nav-label">Order Tracking</span>
+        </a>
+
+        <div class="nav-section-title">Commercials</div>
+
+        <a href="#quotations" class="nav-item" data-page="quotations">
+          <div class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <span class="nav-label">Quotations & Chat</span>
+          <span class="nav-badge" id="sidebar-negotiation-badge">1</span>
+        </a>
+
+        <a href="#payments" class="nav-item" data-page="payments">
+          <div class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+              <line x1="1" y1="10" x2="23" y2="10"></line>
+            </svg>
+          </div>
+          <span class="nav-label">Payments & Invoices</span>
+        </a>
+
+        <div class="nav-section-title">Account</div>
+
+        <a href="#notifications" class="nav-item" data-page="notifications">
+          <div class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+          </div>
+          <span class="nav-label">Notifications</span>
+          <span class="nav-badge" id="sidebar-notif-badge">3</span>
+        </a>
+
+        <a href="#settings" class="nav-item" data-page="settings">
+          <div class="nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+              </path>
+            </svg>
+          </div>
+          <span class="nav-label">Settings</span>
+        </a>
+      </nav>
+
+      <!-- Sidebar Client Footer Card -->
+      <div class="sidebar-footer">
+        <div class="client-mini-card">
+          <div class="client-avatar-badge">RA</div>
+          <div class="client-meta">
+            <div class="client-company-name">Raymond Apparel</div>
+            <div class="client-code-tag">RAY-IND-8842</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN APPLICATION WRAPPER -->
+    <div class="main-wrapper">
+      <!-- TOP STICKY HEADER -->
+      <header class="top-header">
+        <div class="header-left">
+          <button id="mobile-menu-trigger" class="mobile-menu-btn" aria-label="Open Mobile Navigation">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+
+          <!-- Breadcrumb Trail -->
+          <div class="page-breadcrumb">
+            <span id="crumb-parent" class="crumb-parent">Dashboard</span>
+            <span class="crumb-separator">/</span>
+            <span id="crumb-active" class="crumb-active">Client Overview</span>
+          </div>
+        </div>
+
+        <!-- Global Search Bar -->
+        <div class="header-search">
+          <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="global-search-input" class="header-search-input"
+            placeholder="Search orders, fabrics, or invoices...">
+        </div>
+
+        <!-- Header Right Utilities -->
+        <div class="header-right">
+          <!-- Help / Mill Support Button -->
+          <button onclick="App.openHelpModal()" class="support-pill-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            <span>Mill Support</span>
+          </button>
+
+          <!-- Notifications Icon -->
+          <a href="#notifications" class="header-action-btn" title="View Notifications">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span id="header-notif-dot" class="header-badge-dot"></span>
+          </a>
+
+          <!-- User Profile Dropdown -->
+          <div class="user-menu-wrapper">
+            <button id="user-menu-trigger" class="user-profile-trigger">
+              <div class="user-avatar-circle">VM</div>
+              <div class="user-info-text">
+                <div class="user-name" id="header-user-name">Vikram Malhotra</div>
+                <div class="user-role">Fabric Procurement VP</div>
+              </div>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+
+            <!-- Dropdown Flyout -->
+            <div id="user-dropdown-menu" class="user-dropdown-menu">
+              <div class="dropdown-header-info">
+                <div class="dropdown-client-title">Raymond Apparel Limited</div>
+                <div class="dropdown-client-meta">Account: RAY-IND-8842 • Enterprise Tier 1</div>
+              </div>
+
+              <a href="#settings" class="dropdown-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Client Account Profile
+              </a>
+
+              <a href="#payments" class="dropdown-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                  <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+                Milestones & Invoices
+              </a>
+
+              <div class="dropdown-divider"></div>
+
+              <button onclick="SettingsPage.resetPrototypeData()" class="dropdown-item"
+                style="color: var(--color-warning);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="1 4 1 10 7 10"></polyline>
+                  <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                </svg>
+                Reset Prototype Data
+              </button>
+
+              <button onclick="App.showToast('Logged out of demo session.', 'info')" class="dropdown-item"
+                style="color: var(--color-textile-vermilion);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                  <polyline points="16 17 21 12 16 7"></polyline>
+                  <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Sign Out
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT VIEWPORT (9 DEDICATED PAGES) -->
+      <main class="content-viewport">
+        <!-- Page 1: Overview Dashboard -->
+        <div id="view-overview" class="page-view active-view"></div>
+
+        <!-- Page 2: Product Catalogue -->
+        <div id="view-catalogue" class="page-view"></div>
+
+        <!-- Page 3: Create New Order Wizard -->
+        <div id="view-create-order" class="page-view"></div>
+
+        <!-- Page 4: My Orders -->
+        <div id="view-orders" class="page-view"></div>
+
+        <!-- Page 5: Production Tracking -->
+        <div id="view-tracking" class="page-view"></div>
+
+        <!-- Page 6: Quotations & Negotiation Chat -->
+        <div id="view-quotations" class="page-view"></div>
+
+        <!-- Page 7: Payments & Invoices -->
+        <div id="view-payments" class="page-view"></div>
+
+        <!-- Page 8: Notifications -->
+        <div id="view-notifications" class="page-view"></div>
+
+        <!-- Page 9: Client Profile & Settings -->
+        <div id="view-settings" class="page-view"></div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Global Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Application Scripts in Dependency Order -->
+  <script src="js/sample-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/overview.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/order-wizard.js"></script>
+  <script src="js/orders.js"></script>
+  <script src="js/tracking.js"></script>
+  <script src="js/chat.js"></script>
+  <script src="js/payments.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
